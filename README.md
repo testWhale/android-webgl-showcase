@@ -9,5 +9,5 @@ https://testWhale.github.io/zachary-android-assignments/
 ## Demos
 
 - [Assignment 1 — Android Programming Quiz](https://testWhale.github.io/zachary-android-assignments/Assignment-1/)
-- [Assignment 2](https://testWhale.github.io/zachary-android-assignments/Assignment-2-3DFan/)
+- [Assignment-2-3DFan](https://testWhale.github.io/zachary-android-assignments/Assignment-2-3DFan/)
 - [Assignment 3 — Android Programming Quiz 3 — "Fan Dashboard HUD"](https://testWhale.github.io/zachary-android-assignments/Assignment-3/)
