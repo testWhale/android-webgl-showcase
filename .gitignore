@@ -1,0 +1,27 @@
+# ===========================================================================
+# Generated build output & local config - never commit any of this.
+# ===========================================================================
+
+# Desktop CMake build dir
+/build_desktop/
+build*/
+
+# Web (Emscripten) build output + fetched GLM source
+web/
+external/
+
+# Android / Gradle / Android Studio
+android/.gradle/
+android/build/
+android/app/.gradle/
+android/app/.cxx/
+android/app/build/
+android/local.properties
+android/app/local.properties
+.gradle/
+.idea/
+*.iml
+
+# OS junk
+.DS_Store
+Thumbs.db

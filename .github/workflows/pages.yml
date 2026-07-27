@@ -45,7 +45,15 @@ jobs:
           bash build_web.sh
           mkdir -p ../site/Assignment-2-3DFan
           cp -r web/. ../site/Assignment-2-3DFan/
- 
+
+      - name: Build Assignment-3
+        continue-on-error: true
+        working-directory: Assignment-3
+        run: |
+          bash build_web.sh
+          mkdir -p ../site/Assignment-3
+          cp -r web/. ../site/Assignment-3/
+
       - name: Generate index.html
         run: cp .github/site/index.html site/index.html
 
