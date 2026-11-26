@@ -28,7 +28,7 @@ Per-assignment details: [Assignment-2-3DFan/README.md](Assignment-2-3DFan/README
 
 - All three demos and the landing page load from `testwhale.github.io/android-webgl-showcase/` and render in a WebGL 2.0 (OpenGL ES 3.0) context, with no console errors.
 - The latest commit (`69c20b8`) passed all three workflows: **GitHub Pages**, **Desktop** (Ubuntu + Windows) and **Android**.
-- 8 workflow runs failed on 3 July 2026 while the pipeline was being set up (commits `bf386c9`, `806e430`, `60a081d`). Every run after that passed until 26 Nov 2026. On that date the Android workflow failed on a documentation-only commit (`a44be1c`) inside the `android-actions/setup-android` step, while it was downloading the SDK command-line tools. The cause is a CI environment issue, not a code change, and it is still open; the Desktop and GitHub Pages workflows passed on that commit.
+- 8 workflow runs failed on 3 July 2026 while the pipeline was being set up (commits `bf386c9`, `806e430`, `60a081d`). Every run after that passed until 26 Nov 2026. On that date the Android workflow failed on a documentation-only commit (`0943c72`) inside the `android-actions/setup-android` step, while it was downloading the SDK command-line tools. The cause is a CI environment issue, not a code change, and it is still open; the Desktop and GitHub Pages workflows passed on that commit.
 
 ## Technologies
 
