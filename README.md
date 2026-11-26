@@ -28,7 +28,7 @@ Per-assignment details: [Assignment-2-3DFan/README.md](Assignment-2-3DFan/README
 
 - All three demos and the landing page load from `testwhale.github.io/android-webgl-showcase/` and render in a WebGL 2.0 (OpenGL ES 3.0) context, with no console errors.
 - The latest commit (`69c20b8`) passed all three workflows: **GitHub Pages**, **Desktop** (Ubuntu + Windows) and **Android**.
-- The repository has 39 workflow runs in total. 8 of them failed, all on 3 July 2026 while the pipeline was being set up (commits `bf386c9`, `806e430`, `60a081d`). Every run since then has passed.
+- 8 workflow runs failed on 3 July 2026 while the pipeline was being set up (commits `bf386c9`, `806e430`, `60a081d`). Every run after that passed until 26 Nov 2026. On that date the Android workflow failed on a documentation-only commit (`a44be1c`) inside the `android-actions/setup-android` step, while it was downloading the SDK command-line tools. The cause is a CI environment issue, not a code change, and it is still open; the Desktop and GitHub Pages workflows passed on that commit.
 
 ## Technologies
 
@@ -80,7 +80,7 @@ Workflow files: [`.github/workflows/pages.yml`](.github/workflows/pages.yml), [`
 These are taken from the workflow files and the commit history.
 
 - **Getting a browser build of Android code.** The Android entry point is a JNI bridge, so the same scene code also needed a GLFW entry point. It is compiled with `-s FULL_ES3=1` so the OpenGL ES 3.0 calls map onto WebGL 2, and the shaders are preloaded into Emscripten's virtual filesystem.
-- **GitHub Pages pipeline set-up.** 8 workflow runs failed on 3 July 2026 while I was iterating on `pages.yml` and the build scripts. From commit `264c6ec` (12 July) onward, every run has passed.
+- **GitHub Pages pipeline set-up.** 8 workflow runs failed on 3 July 2026 while I was iterating on `pages.yml` and the build scripts. From commit `264c6ec` (12 July), the pipeline passed consistently.
 - **The Android CI picked the wrong Gradle version.** `gradlew` is not committed, so `setup-gradle` silently fell back to the runner's Gradle 9.x, which is incompatible with AGP 8.x. The workflow now reads the pinned version from `gradle-wrapper.properties` and passes it explicitly.
 - **Windows CI couldn't find Visual Studio.** The Visual Studio 17 2022 CMake generator intermittently failed on `windows-latest` runners with "could not find any instance of Visual Studio". I switched the build to Ninja with `msvc-dev-cmd`, which avoids that lookup.
 - **The live link broke when the repository was renamed.** GitHub Pages does not redirect after a rename, so the old URL `testwhale.github.io/zachary-android-assignments/` stopped resolving. The landing page uses relative links and was unaffected; this README now uses the current URL.
